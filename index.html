@@ -716,9 +716,29 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">HMI</h2>
+                <h2 class="text-uppercase">HMIR</h2>
                 <p class="item-intro text-muted">Python</p>
-                <p>Details to come up soon...</p>
+                <p>
+                  This stands for Human Machine Interaction and Robotics. I worked on a very interesting project with
+                  a team of 3 where we had to make a Lego robot move on its own in a maze without hitting obstacles using <b>PID controller</b>
+                  and also search for white light which was placed at one end of the maze using <b>Beaconing</b>. Our Search strategy works in such a way
+                  that we just make the robot go straight and rotate right or left unless and until it finds an obstacle or a wall. 
+                  If the Left distance detected by the sensor is critically less than the set value which in this case was set to (150), 
+                  then the robot would go in a reverse direction for 1 second depending on which sensor catches the low value. 
+                </p>
+                <p>
+                  For example: If the left sensor detects value as 100mm, then it would make the robot perform a reverse arc towards right by running 
+                  the left wheel backwards at speed (80) and the right wheel at (5) vice-versa. If the distance is not critically low which means that
+                  if any of the sensors detect a value which is in between 240 and 400, then run the PID obstacle avoidance behaviour. 
+                </p>
+                <p>
+                  We decided that the light scan was not reliable enough to locate the brightest light source (beaconing) due to external circumstances, 
+                  so instead, we relied on the subsumption consisting the search strategy, PID obstacle avoidance and reverse. In order for it to find the light we
+                  just implemented a stopping behaviour as such if the light intensity that it receives is above 27 then just stop the robot during the search. Thus, 
+                  all of these are called recursively so that the robot checks, avoids obstacles and also stops when it detects the light.
+                </p>
+                
+                <p><a href="acb17ssp.github.io/files/COM2009_3009_Assignemnt_2_Robot_C2_tex.pdf" target="_blank">PDF</a></p>
 
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
